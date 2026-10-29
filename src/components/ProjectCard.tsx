@@ -46,19 +46,21 @@ export function ProjectCard({ project, layout = 'showcase' }: Props) {
         ? t.projects.planned
         : null
 
+  const projectImageClass = 'w-full h-full object-contain object-top'
+
   const media = (
     <div
       className={
         layout === 'compact'
-          ? 'hidden sm:block sm:w-40 shrink-0 aspect-[4/3] bg-slate-800/60 rounded-lg overflow-hidden border border-slate-700/80'
-          : 'w-full lg:w-[48%] shrink-0 aspect-[16/10] bg-slate-800/60 flex items-center justify-center overflow-hidden border border-slate-700/80 rounded-lg'
+          ? 'hidden sm:flex sm:w-40 shrink-0 aspect-[4/3] bg-slate-900/80 rounded-lg overflow-hidden border border-slate-700/80 items-start justify-center'
+          : 'w-full lg:w-[48%] shrink-0 aspect-[16/10] bg-slate-900/80 flex items-start justify-center overflow-hidden border border-slate-700/80 rounded-lg'
       }
     >
       {project.image ? (
         <img
           src={project.image}
           alt={lt(project.title)}
-          className="w-full h-full object-cover"
+          className={projectImageClass}
           loading="lazy"
           decoding="async"
         />

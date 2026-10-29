@@ -42,7 +42,7 @@ export const myProjects: Project[] = [
     },
     technologies: ['React', 'TypeScript', 'Supabase'],
     githubUrl: 'https://github.com/MarcosG2/Gestor-gastos-app',
-    image: '/projects/expense-manager.svg',
+    image: '/projects/expense-manager.png',
     status: 'wip',
     featured: true,
   },
