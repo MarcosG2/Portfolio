@@ -9,6 +9,9 @@ export interface Project {
   liveUrl?: string
   liveLinkLabel?: { es: string; en: string }
   image?: string
+  /** Intrinsic size for layout + sharper decoding (pairs with @2x asset). */
+  imageWidth?: number
+  imageHeight?: number
   featured?: boolean
   status: ProjectStatus
 }
@@ -26,7 +29,9 @@ export const myProjects: Project[] = [
     },
     technologies: ['Vue 3', 'TypeScript', 'Render', 'Aiven'],
     githubUrl: 'https://github.com/MarcosG2/LigaFutbol',
-    image: '/projects/football-league.png',
+    image: '/projects/ligaWeb.png',
+    imageWidth: 1920,
+    imageHeight: 1440,
     status: 'wip',
     featured: true,
   },
@@ -42,7 +47,9 @@ export const myProjects: Project[] = [
     },
     technologies: ['React', 'TypeScript', 'Supabase'],
     githubUrl: 'https://github.com/MarcosG2/Gestor-gastos-app',
-    image: '/projects/expense-manager.png',
+    image: '/projects/PanelWeb.png',
+    imageWidth: 1920,
+    imageHeight: 1440,
     status: 'wip',
     featured: true,
   },
@@ -59,7 +66,9 @@ export const myProjects: Project[] = [
     technologies: ['Vue 3', 'Node.js', 'Express', 'IndexedDB'],
     liveUrl: 'https://puestify.com/',
     liveLinkLabel: { es: 'Visitar web', en: 'Visit website' },
-    image: '/projects/puestify.png',
+    image: '/projects/PuestifyWeb.png',
+    imageWidth: 1920,
+    imageHeight: 1440,
     status: 'live',
     featured: true,
   },

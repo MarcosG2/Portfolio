@@ -46,19 +46,31 @@ export function ProjectCard({ project, layout = 'showcase' }: Props) {
         ? t.projects.planned
         : null
 
-  const projectImageClass = 'w-full h-full object-contain object-top'
+  const imageSrc = project.image
+  const imageSrc2x = imageSrc?.replace(/(\.[a-z]+)$/i, '@2x$1')
+  const imageSrcSet =
+    imageSrc && imageSrc2x ? `${imageSrc} 1x, ${imageSrc2x} 2x` : imageSrc
+
+  const showcaseMediaClass =
+    'w-full lg:w-[48%] shrink-0 aspect-[16/10] bg-slate-900/80 overflow-hidden border border-slate-700/80 rounded-lg'
+
+  const projectImageClass = 'w-full h-full object-cover object-top'
 
   const media = (
     <div
       className={
         layout === 'compact'
-          ? 'hidden sm:flex sm:w-40 shrink-0 aspect-[4/3] bg-slate-900/80 rounded-lg overflow-hidden border border-slate-700/80 items-start justify-center'
-          : 'w-full lg:w-[48%] shrink-0 aspect-[16/10] bg-slate-900/80 flex items-start justify-center overflow-hidden border border-slate-700/80 rounded-lg'
+          ? 'hidden sm:block sm:w-40 shrink-0 aspect-[4/3] bg-slate-900/80 rounded-lg overflow-hidden border border-slate-700/80'
+          : showcaseMediaClass
       }
     >
-      {project.image ? (
+      {imageSrc ? (
         <img
-          src={project.image}
+          src={imageSrc}
+          srcSet={imageSrcSet}
+          sizes={layout === 'compact' ? '160px' : '(min-width: 1024px) 46vw, 100vw'}
+          width={project.imageWidth}
+          height={project.imageHeight}
           alt={lt(project.title)}
           className={projectImageClass}
           loading="lazy"
