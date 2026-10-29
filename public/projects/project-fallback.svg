@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title">
+  <title id="title">Project preview placeholder</title>
+  <rect width="960" height="600" fill="#0f172a"/>
+  <rect x="1" y="1" width="958" height="598" fill="none" stroke="#334155" stroke-width="2"/>
+  <path d="M0 480 L960 120" stroke="#1e3a8a" stroke-width="120" opacity="0.15"/>
+  <text x="480" y="300" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#475569" letter-spacing="0.2em">{ preview }</text>
+</svg>
