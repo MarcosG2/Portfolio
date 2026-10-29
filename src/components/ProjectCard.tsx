@@ -47,9 +47,6 @@ export function ProjectCard({ project, layout = 'showcase' }: Props) {
         : null
 
   const imageSrc = project.image
-  const imageSrc2x = imageSrc?.replace(/(\.[a-z]+)$/i, '@2x$1')
-  const imageSrcSet =
-    imageSrc && imageSrc2x ? `${imageSrc} 1x, ${imageSrc2x} 2x` : imageSrc
 
   const showcaseMediaClass =
     'w-full lg:w-[48%] shrink-0 aspect-[16/10] bg-slate-900/80 overflow-hidden border border-slate-700/80 rounded-lg'
@@ -67,7 +64,6 @@ export function ProjectCard({ project, layout = 'showcase' }: Props) {
       {imageSrc ? (
         <img
           src={imageSrc}
-          srcSet={imageSrcSet}
           sizes={layout === 'compact' ? '160px' : '(min-width: 1024px) 46vw, 100vw'}
           width={project.imageWidth}
           height={project.imageHeight}
