@@ -14,7 +14,10 @@ export const translations = {
     },
     hero: {
       role: 'Desarrollador Full-Stack',
-      bio: 'Desarrollador Full Stack especializado en React en el frontend y Node.js con Express en el backend. Construyo aplicaciones web modernas, escalables y bien estructuradas, con foco en código limpio y soluciones de punta a punta.',
+      bio: 'Desarrollador Full-Stack enfocado en construir aplicaciones web eficientes, escalables y orientadas a producto. Especializado en el ecosistema JavaScript/TypeScript (React, Node.js, Express) y arquitectura de datos (PostgreSQL, Supabase, MySQL).',
+      stackLabel: 'Stack',
+      focusLabel: 'Enfoque',
+      focusLine: 'Sistemas operativos: POS, torneos y finanzas personales.',
       viewProjects: 'Ver proyectos',
       downloadCv: 'Descargar CV',
       linkedin: 'LinkedIn',
@@ -26,16 +29,23 @@ export const translations = {
     experience: {
       title: 'Trayectoria',
       intro:
-        'Estudiante de la Licenciatura en Sistemas de Información (UNSE) y Desarrollador Full-Stack independiente. Diseño y construyo soluciones web a medida, sistemas de gestión y PWAs, combinando bases académicas sólidas con experiencia práctica en el mercado freelance.',
+        'Proyectos propios y encargos freelance desde 2022 (Workana, SoyFreelance). Cubro frontend, backend y puesta en producción en Render y servicios cloud.',
     },
     projects: {
       title: 'Proyectos',
+      intro:
+        'Tres productos con dominios distintos. Abajo: problema de negocio, stack elegido y cómo se implementó.',
+      indexLabel: 'Índice',
+      indexHint: 'Saltar al caso',
       moreWork: 'Más trabajo',
       featured: 'Destacado',
+      problemLabel: 'Problema',
+      approachLabel: 'Enfoque',
       liveDemo: 'Demo en vivo',
       sourceCode: 'Código',
       wip: 'En desarrollo',
       planned: 'Próximamente',
+      statusLive: 'En producción',
       imagePlaceholder: 'Captura próximamente',
     },
     contact: {
@@ -53,7 +63,7 @@ export const translations = {
         'Configura VITE_FORMSPREE_FORM_ID o contáctame directamente:',
     },
     footer: {
-      builtWith: 'Hecho con React y Vite',
+      builtWith: 'Hecho con React + Vite',
       source: 'Código fuente',
       rights: 'Todos los derechos reservados.',
     },
@@ -77,7 +87,10 @@ export const translations = {
     },
     hero: {
       role: 'Full-Stack Developer',
-      bio: 'Full Stack developer focused on React on the frontend and Node.js with Express on the backend. I build modern, scalable web apps with clean code and end-to-end solutions.',
+      bio: 'Full-Stack developer focused on building efficient, scalable, product-oriented web applications. Specialized in the JavaScript/TypeScript ecosystem (React, Node.js, Express) and data architecture (PostgreSQL, Supabase, MySQL).',
+      stackLabel: 'Stack',
+      focusLabel: 'Focus',
+      focusLine: 'Operational systems: POS, tournaments, and personal finance.',
       viewProjects: 'View projects',
       downloadCv: 'Download CV',
       linkedin: 'LinkedIn',
@@ -89,16 +102,23 @@ export const translations = {
     experience: {
       title: 'Background',
       intro:
-        'Information Systems undergraduate at UNSE and independent Full-Stack developer. I design and build custom web solutions, management systems, and PWAs, combining strong academic foundations with hands-on freelance experience.',
+        'Personal projects and freelance work since 2022 (Workana, SoyFreelance). I cover frontend, backend, and production deployment on Render and cloud services.',
     },
     projects: {
       title: 'Projects',
+      intro:
+        'Three products in different domains. Each block lists the business problem, the stack, and how it was built.',
+      indexLabel: 'Index',
+      indexHint: 'Jump to case',
       moreWork: 'More work',
       featured: 'Featured',
+      problemLabel: 'Problem',
+      approachLabel: 'Approach',
       liveDemo: 'Live demo',
       sourceCode: 'Source',
       wip: 'Work in progress',
       planned: 'Coming soon',
+      statusLive: 'In production',
       imagePlaceholder: 'Screenshot coming soon',
     },
     contact: {
@@ -115,7 +135,7 @@ export const translations = {
       mailtoFallback: 'Set VITE_FORMSPREE_FORM_ID or contact me directly:',
     },
     footer: {
-      builtWith: 'Built with React & Vite',
+      builtWith: 'Built with React + Vite',
       source: 'Source code',
       rights: 'All rights reserved.',
     },
