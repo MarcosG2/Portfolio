@@ -10,7 +10,7 @@ export function Experience() {
   return (
     <section id="experiencia" className="section-block z-10">
       <SectionHeading>{t.experience.title}</SectionHeading>
-      <p className="type-caption -mt-10 mb-10 max-w-[70ch]">{t.experience.intro}</p>
+      <p className="type-caption text-prose section-intro max-w-[70ch]">{t.experience.intro}</p>
 
       <ol className="relative border-l-2 border-slate-700/90 ml-0.5 space-y-10 list-none">
         {backgroundEntries.map((entry) => (
