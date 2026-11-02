@@ -12,11 +12,7 @@ function LangButton({ locale, active, onClick }: Props) {
     <button
       type="button"
       onClick={onClick}
-      className={`px-2 py-1 rounded text-xs font-semibold uppercase tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 ${
-        active
-          ? 'bg-blue-600/30 text-blue-300'
-          : 'text-slate-400 hover:text-slate-200'
-      }`}
+      className="lang-btn focus-ring touch-target px-2 py-1 rounded text-xs font-semibold uppercase tracking-wide"
       aria-pressed={active}
     >
       {locale}
@@ -29,7 +25,7 @@ export function LanguageToggle() {
 
   return (
     <div
-      className="flex items-center gap-1 border border-slate-700 rounded-md p-0.5"
+      className="flex items-center gap-1 border border-[var(--color-line)] rounded-md p-0.5 bg-[var(--color-surface)]"
       role="group"
       aria-label="Language"
     >

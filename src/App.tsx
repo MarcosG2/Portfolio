@@ -12,10 +12,7 @@ function App() {
 
   return (
     <>
-      <a
-        href="#inicio"
-        className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-md"
-      >
+      <a href="#inicio" className="sr-only skip-link-focus btn-primary focus-ring">
         {t.a11y.skipToContent}
       </a>
 

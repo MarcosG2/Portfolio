@@ -1,4 +1,4 @@
-# Design system — incumbent (refinement baseline)
+# Design system — zinc / cyan
 
 ## Mode
 
@@ -6,18 +6,19 @@
 
 ## Scene
 
-Late-evening desk work: deep slate ground, cool blue-violet ambient light, high legibility for long reading.
+Late-evening desk work: deep zinc ground, cyan accent for key actions, high legibility for long reading.
 
 ## Color
 
-| Role | Value |
-|------|--------|
-| Ground | `#0f172a` (slate-900) |
-| Surface | `slate-800/50`–`slate-900/40` |
-| Primary text | `slate-100` / white |
-| Accent | blue-500–600 (`#3b82f6`, `#2563eb`) |
-| Secondary copy | tint from accent (`#87aada`, `#a2c4fd`) — not neutral gray alone |
-| Border | `slate-700` / `slate-800` |
+| Role | Token / value |
+|------|----------------|
+| Ground | `--color-ground` `#09090b` |
+| Surface | `--color-surface` `#18181b` |
+| Primary text | `--color-ink` `#f4f4f5` |
+| Muted text | `--color-ink-muted` |
+| Meta | `--color-meta` |
+| Accent | `--color-signal` `#06b6d4` |
+| Border | `--color-line` `#65656d` (≥3:1 UI contrast) |
 
 ## Typography roles
 
@@ -26,33 +27,38 @@ Late-evening desk work: deep slate ground, cool blue-violet ambient light, high 
 | Display | `--text-display`, `.type-display` | Hero name |
 | Role line | `--text-role`, `.type-role` | Job title under name |
 | Section | `--text-section`, `.section-title` | H2 sections |
-| Lead | `--text-lead` | Short intros |
-| Body | `--text-body`, 1.7 leading | Default |
-| Caption | `.type-caption`, `--color-copy` | Descriptions |
+| Subsection | `.type-subsection` | H3 blocks |
+| Project title | `.type-project-title` | Case study headings |
+| Lead | `--text-lead`, `.type-lead` | Short intros |
+| Body | `--text-body`, 1.72 leading | Default |
+| Caption | `.type-caption` | Descriptions |
 | Meta | `.type-meta` | Labels, dates, overlines |
 
-- Body prose: `text-wrap: pretty`, max ~70ch
+- Body prose: `text-wrap: pretty`, max ~68ch
 - Headings: `text-wrap: balance`
-- Onest variable 400–700, `font-display: swap`
+- Plus Jakarta Sans 400–700, `font-display: swap` (loaded in `index.html`)
 
 ## Motion
 
-- One entrance on hero load (`fade-up`, ~600ms, ease-out)
+- One entrance on hero load (`fade-up`, ~650ms, ease-out)
 - Respect `prefers-reduced-motion`
 - No identical staggered reveal on every section
 
 ## Components
 
-- Fixed nav with readable blur over scroll (functional, not decorative glass)
-- Projects: **showcase rows** for featured/WIP; **compact list** for the rest (avoid uniform card grid)
-- Skills: tagged chips on dark surfaces (consistent with project tags)
-- Focus: visible rings (`blue-400`), themed selection and scrollbars
+- Fixed nav with light blur over scroll (functional, not decorative glass)
+- Projects: **showcase rows** for featured; **compact list** for archive; status labels only in the index grid
+- Skills: `.chip` on dark surfaces
+- Buttons: `.btn-primary`, `.btn-secondary`
+- Forms: `.field-input`, `.field-label`
+- Focus: `.focus-ring` with `--color-signal`
 
 ## Bans (Impeccable craft floor)
 
 - No kickers above the hero name
-- No decorative gradient halos without depth
+- No decorative gradient halos or glow shadows on CTAs
 - No gradient text
+- No duplicate status/featured badges between index and case blocks
 
 ## Assets pending
 

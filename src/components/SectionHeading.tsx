@@ -8,7 +8,7 @@ type Props = {
 
 export function SectionHeading({ id, children, className = '' }: Props) {
   return (
-    <h2 id={id} className={`section-title text-slate-100 ${className}`}>
+    <h2 id={id} className={`section-title ${className}`}>
       {children}
     </h2>
   )

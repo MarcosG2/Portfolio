@@ -16,6 +16,6 @@
   <line x1="480" y1="120" x2="480" y2="520" stroke="#86efac" stroke-width="2" opacity="0.5"/>
   <rect x="80" y="220" width="120" height="200" fill="none" stroke="#86efac" stroke-width="2" opacity="0.45"/>
   <rect x="760" y="220" width="120" height="200" fill="none" stroke="#86efac" stroke-width="2" opacity="0.45"/>
-  <text x="480" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="600" fill="#a2c4fd" letter-spacing="0.12em">LEAGUE · WIP</text>
+  <text x="480" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="600" fill="#06b6d4" letter-spacing="0.12em">LEAGUE ï¿½ WIP</text>
   <text x="480" y="560" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Screenshot coming soon</text>
 </svg>

@@ -17,6 +17,6 @@
   <rect x="560" y="240" width="48" height="140" rx="6" fill="#60a5fa" opacity="0.75"/>
   <path d="M680 320 L760 280 L840 340" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"/>
   <circle cx="760" cy="280" r="6" fill="#34d399"/>
-  <text x="480" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="600" fill="#a2c4fd" letter-spacing="0.12em">EXPENSES · WIP</text>
+  <text x="480" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="600" fill="#06b6d4" letter-spacing="0.12em">EXPENSES ï¿½ WIP</text>
   <text x="480" y="560" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Screenshot coming soon</text>
 </svg>

@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { HiBars3, HiXMark } from 'react-icons/hi2'
 import { LanguageToggle } from './LanguageToggle'
 import { useLanguage } from '../i18n/useLanguage'
-import { useActiveSection, type SectionId } from '../hooks/useActiveSection'
+import { useActiveSection } from '../hooks/useActiveSection'
 
 const links = [
   { id: 'inicio' as const, hash: '#inicio', labelKey: 'home' as const },
@@ -17,33 +17,39 @@ export function Navbar() {
   const active = useActiveSection()
   const [open, setOpen] = useState(false)
 
-  const linkClass = (id: SectionId) =>
-    `transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 rounded-sm ${
-      active === id ? 'text-blue-400' : 'text-slate-300 hover:text-blue-400'
-    }`
+  const navLinkClass = 'site-header-nav-link focus-ring touch-link'
 
   const closeMenu = () => setOpen(false)
 
+  useEffect(() => {
+    if (!open) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [open])
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-sm border-b border-slate-800/90">
+    <header className="site-header">
       <nav
         className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4"
         aria-label={t.nav.mainNav}
       >
-        <a
-          href="#inicio"
-          className="text-sm font-semibold text-slate-100 tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 rounded-sm"
-          onClick={closeMenu}
-        >
+        <a href="#inicio" className="site-header-logo focus-ring touch-target" onClick={closeMenu}>
           MG
         </a>
 
-        <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <ul className="hidden md:flex items-center gap-8">
           {links.map(({ id, hash, labelKey }) => (
             <li key={id}>
               <a
                 href={hash}
-                className={linkClass(id)}
+                className={navLinkClass}
                 aria-current={active === id ? 'page' : undefined}
               >
                 {t.nav[labelKey]}
@@ -56,7 +62,7 @@ export function Navbar() {
           <LanguageToggle />
           <button
             type="button"
-            className="md:hidden p-2 text-slate-200 rounded-md hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400"
+            className="site-header-menu-btn flex md:hidden icon-btn focus-ring touch-target"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
@@ -68,16 +74,13 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div
-          id="mobile-nav"
-          className="md:hidden border-t border-slate-800 bg-slate-900/95 backdrop-blur-md px-6 py-4"
-        >
-          <ul className="flex flex-col gap-4 text-sm font-medium">
+        <div id="mobile-nav" className="mobile-nav-panel md:hidden">
+          <ul className="flex flex-col gap-4">
             {links.map(({ id, hash, labelKey }) => (
               <li key={id}>
                 <a
                   href={hash}
-                  className={linkClass(id)}
+                  className={navLinkClass}
                   aria-current={active === id ? 'page' : undefined}
                   onClick={closeMenu}
                 >

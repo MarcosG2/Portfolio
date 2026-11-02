@@ -12,31 +12,6 @@ type Props = {
   lead?: boolean
 }
 
-function StatusBadges({
-  project,
-  featuredLabel,
-  statusLabel,
-}: {
-  project: Project
-  featuredLabel: string
-  statusLabel: string | null
-}) {
-  return (
-    <>
-      {project.featured ? (
-        <span className="text-xs font-medium text-[var(--color-signal)] bg-[color-mix(in_srgb,var(--color-signal)_18%,transparent)] px-2 py-0.5 rounded-sm">
-          {featuredLabel}
-        </span>
-      ) : null}
-      {statusLabel ? (
-        <span className="text-xs font-medium text-[var(--color-ink-muted)] border border-[var(--color-line)] px-2 py-0.5 rounded-sm">
-          {statusLabel}
-        </span>
-      ) : null}
-    </>
-  )
-}
-
 export function ProjectCard({ project, layout = 'showcase', reverse = false, lead = false }: Props) {
   const { t } = useLanguage()
   const lt = useLocalizedText()
@@ -46,14 +21,12 @@ export function ProjectCard({ project, layout = 'showcase', reverse = false, lea
       ? t.projects.wip
       : project.status === 'planned'
         ? t.projects.planned
-        : project.status === 'live'
-          ? null
-          : null
+        : null
 
   const imageSrc = project.image
 
   const showcaseMediaClass =
-    'w-full shrink-0 aspect-[4/3] overflow-hidden rounded-lg border border-[var(--color-line)]'
+    'w-full shrink-0 aspect-[4/3] overflow-hidden rounded-sm border border-[var(--color-line)]'
 
   const projectImageClass = 'block w-full h-full object-cover object-bottom'
 
@@ -142,6 +115,8 @@ export function ProjectCard({ project, layout = 'showcase', reverse = false, lea
     </div>
   )
 
+  const titleClass = lead ? 'type-project-title type-project-title--lead' : 'type-project-title'
+
   if (layout === 'compact') {
     return (
       <article
@@ -150,17 +125,9 @@ export function ProjectCard({ project, layout = 'showcase', reverse = false, lea
       >
         {media}
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2 mb-2">
-            <h3 className="text-lg font-semibold text-[var(--color-ink)] tracking-tight">
-              {lt(project.title)}
-            </h3>
-            <StatusBadges
-              project={project}
-              featuredLabel={t.projects.featured}
-              statusLabel={statusLabel}
-            />
-          </div>
-          <p className="type-caption text-sm">{lt(project.description)}</p>
+          <h3 className={titleClass}>{lt(project.title)}</h3>
+          {statusLabel ? <p className="type-meta mt-1">{statusLabel}</p> : null}
+          <p className="type-caption text-sm mt-2">{lt(project.description)}</p>
           {narrative}
           {techList}
           {links}
@@ -178,21 +145,8 @@ export function ProjectCard({ project, layout = 'showcase', reverse = false, lea
     >
       {media}
       <div className="flex flex-col min-w-0 flex-1 lg:pt-1">
-        <div className="flex flex-wrap items-center gap-2 mb-2">
-          <h3
-            className={`font-semibold text-[var(--color-ink)] text-balance leading-snug tracking-tight ${
-              lead ? 'text-2xl sm:text-[1.65rem]' : 'text-xl sm:text-2xl'
-            }`}
-          >
-            {lt(project.title)}
-          </h3>
-          <StatusBadges
-            project={project}
-            featuredLabel={t.projects.featured}
-            statusLabel={statusLabel}
-          />
-        </div>
-        <p className="type-lead text-[var(--color-ink-muted)] max-w-[58ch]">{lt(project.description)}</p>
+        <h3 className={titleClass}>{lt(project.title)}</h3>
+        <p className="type-lead text-[var(--color-ink-muted)] max-w-[58ch] mt-2">{lt(project.description)}</p>
         {narrative}
         {techList}
         {links}
