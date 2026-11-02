@@ -47,7 +47,7 @@ export function Hero() {
             href={site.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[var(--color-copy-muted)] hover:text-slate-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 rounded-sm"
+            className="inline-flex items-center gap-2 text-[var(--color-copy-muted)] hover:text-orange-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 rounded-sm"
           >
             <FaGithub className="text-base" aria-hidden />
             {t.hero.github}
